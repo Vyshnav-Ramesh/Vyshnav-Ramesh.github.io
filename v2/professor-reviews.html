@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Professor Reviews — Case Study 02</title>
+<title>Professor Reviews — Case Study 01</title>
 <meta name="description" content="Case study: Professor Reviews, a student-centred app for choosing courses and professors at RIT Dubai.">
-<meta property="og:title" content="Professor Reviews — Case Study 02">
+<meta property="og:title" content="Professor Reviews — Case Study 01">
 <meta property="og:description" content="Case study: Professor Reviews, a student-centred app for choosing courses and professors at RIT Dubai.">
 <meta property="og:image" content="assets/vyshnav.jpg">
 <link rel="icon" href="assets/vyshnav.jpg">
@@ -38,25 +38,23 @@ a{color:#2E2119}a:hover{color:#A3482A}
 @supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
-<style>html{scroll-behavior:smooth}</style>
+<style>html{scroll-behavior:smooth;scroll-padding-top:72px}</style>
+<link rel="stylesheet" href="assets/ui.css">
 </head>
 <body>
+<a class="skip" href="#case-title">Skip to content</a>
 <div style="--accent: #A3482A; background: #F4EADB; color: #2E2119; font-family: 'Archivo', system-ui, sans-serif; min-height: 100vh; overflow-x: clip">
 
 <!-- NAV -->
-<header style="background: #2E2119; color: #F4EADB">
-<div style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; min-height: 72px">
-<a href="index.html" style="font-family: 'Anton', sans-serif; font-size: 26px; letter-spacing: 0.02em; text-decoration: none; color: #F4EADB; display: flex; align-items: center; gap: 10px">
-<span style="background: var(--accent); color: #F4EADB; padding: 2px 10px; border-radius: 6px">VR</span>
-<span>VYSHNAV RAMESH</span>
-</a>
-<nav aria-label="Main" class="lbl" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px; letter-spacing: 0.08em">
-<a href="index.html" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">01 Home</a>
-<a href="index.html#work" aria-current="page" style="color: #F4EADB; text-decoration: none; border-bottom: 3px solid #E0A84A; padding: 12px 0 9px">02 Work</a>
-<a href="index.html#about" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">03 About</a>
-<a href="#contact" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">04 Contact</a>
-<a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn" style="background: #E0A84A; color: #2E2119; text-decoration: none; padding: 12px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; border-radius: 999px">Resume (PDF) ↓</a>
+<header class="hdr">
+<div class="hdr-in">
+<a href="index.html" class="brand" aria-label="Vyshnav Ramesh — home"><span class="mono">VR</span><span>VYSHNAV RAMESH</span></a>
+<nav aria-label="Main" class="lbl mainnav">
+<a href="index.html#work" aria-current="page">Work</a>
+<a href="index.html#about">About</a>
+<a href="#contact">Contact</a>
 </nav>
+<a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn cv lbl">Resume (PDF) ↓</a>
 </div>
 </header>
 
@@ -70,7 +68,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: end">
 <div style="display: flex; flex-direction: column; gap: 24px">
 <div class="rise" style="display: flex; align-items: center; gap: 16px">
-<span class="disp" style="font-size: 72px; color: var(--accent)">02</span>
+<span class="disp" style="font-size: 72px; color: var(--accent)">01</span>
 <span class="lbl">Case study<br>UX capstone · Mobile app</span>
 </div>
 <h1 id="case-title" class="disp rise" style="margin: 0; font-size: clamp(4rem, 9vw, 8.5rem); animation-delay: .15s">Professor<br>Reviews</h1>
@@ -94,29 +92,40 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <div style="position: absolute; right: clamp(12px, 3vw, 40px); top: -48px; width: 112px; height: 112px; border-radius: 50%; background: #E0A84A; display: flex; align-items: center; justify-content: center">
 <svg class="spin" viewBox="0 0 200 200" width="112" height="112" aria-hidden="true" style="position: absolute; inset: 0">
 <defs><path id="p-circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"></path></defs>
-<text font-family="Anton, sans-serif" font-size="22" letter-spacing="4" fill="#2E2119"><textPath href="#p-circ">CASE STUDY ★ REVIEWS ★ 02 ★ </textPath></text>
+<text font-family="Anton, sans-serif" font-size="22" letter-spacing="4" fill="#2E2119"><textPath href="#p-circ">CASE STUDY ★ REVIEWS ★ 01 ★ </textPath></text>
 </svg>
 <span aria-hidden="true" style="font-size: 30px; position: relative">✺</span>
 </div>
 </div>
 </section>
 
+<!-- AT A GLANCE (v2) -->
+<section class="glance" aria-labelledby="glance-h">
+<div class="glance-in">
+<h2 id="glance-h" class="lbl">At a glance</h2>
+<div><h3 class="lbl">Problem</h3><p>RIT Dubai students register “blind”: no syllabi before enrolling, thin course info and conflicting advice in WhatsApp groups.</p></div>
+<div><h3 class="lbl">What I did</h3><p>Ran semi-structured interviews, affinity-mapped the findings into four themes, built the persona and journey map, then designed and tested the Figma prototype.</p></div>
+<div><h3 class="lbl">Result</h3><p><strong>100%</strong> task completion, <strong>4.7/5</strong> ease of use and <strong>1 error</strong> in 20 attempts across 4 participants.</p></div>
+</div>
+</section>
+
 <!-- STICKY IN-PAGE NAV -->
-<nav aria-label="On this page" style="position: sticky; top: 0; z-index: 5; background: #F4EADB; border-top: 2px solid #2E2119; border-bottom: 2px solid #2E2119">
-<div class="lbl" style="max-width: 1440px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
-<a href="#problem" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">02 Problem</a>
-<a href="#research" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Research</a>
+<nav aria-label="On this page" data-spy style="position: sticky; top: 0; z-index: 5; background: #F4EADB; border-top: 2px solid #2E2119; border-bottom: 2px solid #2E2119">
+<div class="lbl pagenav-in" style="max-width: 1440px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<a href="index.html#work" class="pill home" style="text-decoration: none; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">← All work</a>
+<a href="#problem" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">01 Problem</a>
+<a href="#research" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">02 Research</a>
 <a href="#solution" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">03 Solution</a>
 <a href="#technology" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">04 Design</a>
 <a href="#outcome" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">05 Outcome</a>
-<a href="#explore" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">06 Explore</a>
+<a href="#explore" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">06 Try it</a>
 </div>
 </nav>
 
 <!-- 02 PROBLEM -->
 <section id="problem" aria-labelledby="problem-h" style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(32px, 5vw, 72px)">
 <div class="reveal">
-<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">02 — The problem</p>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">01 — The problem</p>
 <h2 id="problem-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">Registering <span class="ital" style="color: var(--accent)">blind</span></h2>
 </div>
 <div class="reveal" style="display: flex; flex-direction: column; gap: 28px">
@@ -140,7 +149,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <section id="research" aria-labelledby="research-h" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px) clamp(56px, 7vw, 104px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
 <div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; border-bottom: 6px solid #2E2119; padding-bottom: 14px">
 <div>
-<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">Research — what students told us</p>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">02 — Research: what students told us</p>
 <h2 id="research-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">In their <span class="ital" style="color: var(--accent)">words</span></h2>
 </div>
 <p style="margin: 0; max-width: 28em; font-size: 16px; line-height: 1.55">Mostly in-person semi-structured interviews (10 questions) with undergraduates in psychology, engineering and computing who had each registered at least twice. Responses were coded, affinity-clustered and turned into themes.</p>
@@ -289,7 +298,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <p class="lbl" style="margin: 0 0 14px; color: var(--accent)">06 — Explore the project</p>
 <h2 id="explore-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">Try it <span class="ital" style="color: var(--accent)">yourself</span></h2>
 </div>
-<a href="https://www.figma.com/design/pbgQNNUA4xSpjly1WGovsp/ISTE260_FINAL_PROTOTYPE?m=auto&amp;t=7S8sI244bThS6MG3-6" class="btn lbl" style="background: #2E2119; color: #F4EADB; text-decoration: none; font-size: 15px; padding: 16px 26px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px">Open Figma prototype <span class="arrow">↗</span></a>
+<a href="https://www.figma.com/design/pbgQNNUA4xSpjly1WGovsp/ISTE260_FINAL_PROTOTYPE?m=auto&amp;t=7S8sI244bThS6MG3-6" target="_blank" rel="noopener" aria-label="Open Figma prototype (opens in a new tab)" class="btn lbl" style="background: #2E2119; color: #F4EADB; text-decoration: none; font-size: 15px; padding: 16px 26px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px">Open Figma prototype <span class="arrow">↗</span></a>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 56px); align-items: center; justify-content: center">
 <div class="reveal" style="flex: 0 1 280px; max-width: 280px"><img class="phone float" src="assets/pr-home.jpg" alt="Home screen: welcome banner, five service tiles, top-rated professors and community stats." style="aspect-ratio: 9 / 19.5"></div>
@@ -303,8 +312,8 @@ a{color:#2E2119}a:hover{color:#A3482A}
 </div>
 </div>
 </section><nav aria-label="More projects" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px) clamp(56px, 7vw, 96px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px">
-<a href="virufy.html" class="nx" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px"><span class="lbl"><span class="arrow back">←</span> Previous case · 01</span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">Virufy</span></a>
-<a href="index.html" class="nx" style="text-decoration: none; color: #F4EADB; background: #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px; text-align: right"><span class="lbl" style="color: #F0B47E">That’s the issue <span class="arrow">→</span></span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">Back to all work</span></a>
+<a href="index.html#work" class="nx" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px"><span class="lbl"><span class="arrow back">←</span> Back to</span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">All work</span></a>
+<a href="virufy.html" class="nx" style="text-decoration: none; color: #F4EADB; background: #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px; text-align: right"><span class="lbl" style="color: #F0B47E">Next case · 02 <span class="arrow">→</span></span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">Virufy</span></a>
 </nav>
 
 <!-- CONTACT -->
@@ -321,5 +330,6 @@ a{color:#2E2119}a:hover{color:#A3482A}
 </footer>
 
 </div>
+<script src="assets/ui.js"></script>
 </body>
 </html>

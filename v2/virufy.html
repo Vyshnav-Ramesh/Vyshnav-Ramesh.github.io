@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Virufy — Case Study 01</title>
+<title>Virufy — Case Study 02</title>
 <meta name="description" content="Case study: designing and deploying the Virufy demo app for the UAE.">
-<meta property="og:title" content="Virufy — Case Study 01">
+<meta property="og:title" content="Virufy — Case Study 02">
 <meta property="og:description" content="Case study: designing and deploying the Virufy demo app for the UAE.">
 <meta property="og:image" content="assets/vyshnav.jpg">
 <link rel="icon" href="assets/vyshnav.jpg">
@@ -39,25 +39,23 @@ a{color:#2E2119}a:hover{color:#A3482A}
 @supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
-<style>html{scroll-behavior:smooth}</style>
+<style>html{scroll-behavior:smooth;scroll-padding-top:72px}</style>
+<link rel="stylesheet" href="assets/ui.css">
 </head>
 <body>
+<a class="skip" href="#case-title">Skip to content</a>
 <div style="--accent: #A3482A; background: #F4EADB; color: #2E2119; font-family: 'Archivo', system-ui, sans-serif; min-height: 100vh; overflow-x: clip">
 
 <!-- NAV -->
-<header style="background: #2E2119; color: #F4EADB">
-<div style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; min-height: 72px">
-<a href="index.html" style="font-family: 'Anton', sans-serif; font-size: 26px; letter-spacing: 0.02em; text-decoration: none; color: #F4EADB; display: flex; align-items: center; gap: 10px">
-<span style="background: var(--accent); color: #F4EADB; padding: 2px 10px; border-radius: 6px">VR</span>
-<span>VYSHNAV RAMESH</span>
-</a>
-<nav aria-label="Main" class="lbl" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px; letter-spacing: 0.08em">
-<a href="index.html" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">01 Home</a>
-<a href="index.html#work" aria-current="page" style="color: #F4EADB; text-decoration: none; border-bottom: 3px solid #E0A84A; padding: 12px 0 9px">02 Work</a>
-<a href="index.html#about" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">03 About</a>
-<a href="#contact" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">04 Contact</a>
-<a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn" style="background: #E0A84A; color: #2E2119; text-decoration: none; padding: 12px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; border-radius: 999px">Resume (PDF) ↓</a>
+<header class="hdr">
+<div class="hdr-in">
+<a href="index.html" class="brand" aria-label="Vyshnav Ramesh — home"><span class="mono">VR</span><span>VYSHNAV RAMESH</span></a>
+<nav aria-label="Main" class="lbl mainnav">
+<a href="index.html#work" aria-current="page">Work</a>
+<a href="index.html#about">About</a>
+<a href="#contact">Contact</a>
 </nav>
+<a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn cv lbl">Resume (PDF) ↓</a>
 </div>
 </header>
 
@@ -71,7 +69,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: end">
 <div style="display: flex; flex-direction: column; gap: 24px">
 <div class="rise" style="display: flex; align-items: center; gap: 16px">
-<span class="disp" style="font-size: 72px; color: var(--accent)">01</span>
+<span class="disp" style="font-size: 72px; color: var(--accent)">02</span>
 <span class="lbl">Case study<br>Internship · Health tech</span>
 </div>
 <h1 id="case-title" class="disp rise" style="margin: 0; font-size: clamp(5rem, 14vw, 13rem); animation-delay: .15s">Virufy</h1>
@@ -80,35 +78,46 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <dl class="rise" style="margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid #2E2119; animation-delay: .45s">
 <div style="padding: 16px 16px 16px 0; border-bottom: 1px solid #CDB89C; border-right: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">Role</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">Mobile Application Developer (Intern)</dd></div>
 <div style="padding: 16px 0 16px 16px; border-bottom: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">Timeline</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">3 months, 2025</dd></div>
-<div style="padding: 16px 16px 16px 0; border-right: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">My focus</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">Design and implementation of the login page</dd></div>
+<div style="padding: 16px 16px 16px 0; border-right: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">My focus</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">Design and build of the welcome &amp; login screen (Fig. 1)</dd></div>
 <div style="padding: 16px 0 16px 16px"><dt class="lbl" style="color: #8A3A20">Team</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">6 people, UAE deployment team</dd></div>
 </dl>
 </div>
 <div aria-hidden="true" style="position: absolute; right: clamp(16px, 4vw, 56px); top: 40px; width: 112px; height: 112px; border-radius: 50%; background: #E0A84A; display: flex; align-items: center; justify-content: center">
 <svg class="spin" viewBox="0 0 200 200" width="112" height="112" style="position: absolute; inset: 0">
 <defs><path id="v-circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"></path></defs>
-<text font-family="Anton, sans-serif" font-size="22" letter-spacing="4" fill="#2E2119"><textPath href="#v-circ">CASE STUDY ★ VIRUFY ★ 01 ★ </textPath></text>
+<text font-family="Anton, sans-serif" font-size="22" letter-spacing="4" fill="#2E2119"><textPath href="#v-circ">CASE STUDY ★ VIRUFY ★ 02 ★ </textPath></text>
 </svg>
 <span style="font-size: 30px; position: relative">✺</span>
 </div>
 </section>
 
+<!-- AT A GLANCE (v2) -->
+<section class="glance" aria-labelledby="glance-h">
+<div class="glance-in">
+<h2 id="glance-h" class="lbl">At a glance</h2>
+<div><h3 class="lbl">The brief</h3><p>Virufy had launched its AI cough-screening app in Japan and needed a Dubai team to adapt it for users in the UAE.</p></div>
+<div><h3 class="lbl">What I did</h3><p>As one of a 6-person intern team, I designed the welcome &amp; login screen in Figma and built it in React, adapting the Japanese team’s work for the Middle East.</p></div>
+<div><h3 class="lbl">Result</h3><p>A live demo anyone can try from the Virufy website. <a href="#explore" style="color: #F6CF8A">Try it ↓</a></p></div>
+</div>
+</section>
+
 <!-- STICKY IN-PAGE NAV -->
-<nav aria-label="On this page" style="position: sticky; top: 0; z-index: 5; background: #F4EADB; border-top: 2px solid #2E2119; border-bottom: 2px solid #2E2119">
-<div class="lbl" style="max-width: 1440px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
-<a href="#problem" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">02 Problem</a>
-<a href="#process" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">03 Process</a>
-<a href="#prototype" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">04 Prototype</a>
-<a href="#outcome" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">05 Outcome</a>
-<a href="#explore" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">06 See it live</a>
+<nav aria-label="On this page" data-spy style="position: sticky; top: 0; z-index: 5; background: #F4EADB; border-top: 2px solid #2E2119; border-bottom: 2px solid #2E2119">
+<div class="lbl pagenav-in" style="max-width: 1440px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<a href="index.html#work" class="pill home" style="text-decoration: none; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">← All work</a>
+<a href="#problem" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">01 The brief</a>
+<a href="#process" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">02 Process</a>
+<a href="#prototype" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">03 Screens</a>
+<a href="#outcome" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">04 Outcome</a>
+<a href="#explore" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">05 See it live</a>
 </div>
 </nav>
 
 <!-- 02 PROBLEM -->
 <section id="problem" aria-labelledby="problem-h" style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(32px, 5vw, 72px)">
 <div class="reveal">
-<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">02 — The problem</p>
-<h2 id="problem-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">What was <span class="ital" style="color: var(--accent)">broken?</span></h2>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">01 — The brief</p>
+<h2 id="problem-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">The <span class="ital" style="color: var(--accent)">brief</span></h2>
 </div>
 <div class="reveal" style="display: flex; flex-direction: column; gap: 28px">
 <p style="margin: 0; font-size: clamp(1.2rem, 1.8vw, 1.55rem); line-height: 1.5; font-weight: 500">Virufy had already launched their application in Japan. They wanted to work with a team in Dubai to launch it in the UAE, with a focus on adapting the application to the cultural differences of the Middle East.</p>
@@ -123,7 +132,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <section id="process" aria-labelledby="process-h" style="background: var(--accent); color: #F4EADB; border-radius: clamp(24px, 4vw, 48px)">
 <div style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
 <div class="reveal">
-<p class="lbl" style="margin: 0 0 14px; color: #F6CF8A">03 — The process</p>
+<p class="lbl" style="margin: 0 0 14px; color: #F6CF8A">02 — The process</p>
 <h2 id="process-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">From Japan <span class="ital" style="color: #F6CF8A">to the UAE</span></h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 20px">
@@ -135,7 +144,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <div class="tile reveal" style="background: #F4EADB; color: #2E2119; border-radius: 16px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 12px">
 <span class="disp" style="font-size: 44px; color: var(--accent)">02</span>
 <h3 class="lbl" style="margin: 0; font-size: 15px">My part</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.65">As an intern, I was on the team that designed and deployed the application for the UAE. Taking inspiration from the Japanese team’s work, we developed the designs in Figma and coded them in React. The deployment let people try a demo straight from the Virufy website. It was a valuable experience.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.65">As an intern, I was on the team that designed and deployed the application for the UAE. Taking inspiration from the Japanese team’s work, we developed the designs in Figma and coded them in React. The deployment let people try a demo straight from the Virufy website.</p>
 </div>
 </div>
 <ol class="reveal lbl" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-size: 14px">
@@ -156,7 +165,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <section id="prototype" aria-labelledby="proto-h" style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
 <div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; border-bottom: 6px solid #2E2119; padding-bottom: 14px">
 <div>
-<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">04 — Prototype</p>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">03 — Screens</p>
 <h2 id="proto-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">The <span class="ital" style="color: var(--accent)">screens</span></h2>
 </div>
 <ul class="lbl" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
@@ -167,7 +176,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(20px, 3vw, 40px)">
 <figure class="tile reveal" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
 <div style="background: #E8D5B9; border-radius: 20px; padding: clamp(16px, 2.4vw, 32px)"><img src="assets/virufy-welcome.png" alt="Virufy welcome and login screen with language selector, information about Virufy and disease and result selectors." style="display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 12px 28px rgba(46,33,25,.2); background: #fff"></div>
-<figcaption class="lbl" style="color: #6B5644">Fig. 1 — Welcome &amp; login screen</figcaption>
+<figcaption class="lbl" style="color: #6B5644">Fig. 1 — Welcome &amp; login screen · my focus</figcaption>
 </figure>
 <figure class="tile reveal" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
 <div style="background: #E8D5B9; border-radius: 20px; padding: clamp(16px, 2.4vw, 32px)"><img src="assets/virufy-record.png" alt="Record your cough instructions screen with three illustrated steps." style="display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 12px 28px rgba(46,33,25,.2); background: #fff"></div>
@@ -180,7 +189,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <section id="outcome" aria-labelledby="outcome-h" style="background: #EADBC4">
 <div style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
 <div class="reveal">
-<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">05 — Outcome</p>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">04 — Outcome</p>
 <h2 id="outcome-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">How it <span class="ital" style="color: var(--accent)">landed</span></h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(24px, 3vw, 48px); border-top: 2px solid #2E2119; padding-top: 28px">
@@ -195,7 +204,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <section id="explore" aria-labelledby="explore-h" style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: flex; flex-direction: column; gap: 32px">
 <div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
 <div>
-<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">06 — Explore the project</p>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">05 — Explore the project</p>
 <h2 id="explore-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">See it <span class="ital" style="color: var(--accent)">live</span></h2>
 </div>
 <p style="margin: 0; max-width: 24em; font-size: 16px; line-height: 1.55">Click the banner to open the Virufy demo in a new tab.</p>
@@ -208,8 +217,8 @@ a{color:#2E2119}a:hover{color:#A3482A}
 
 <!-- PREV / NEXT -->
 <nav aria-label="More projects" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px) clamp(56px, 7vw, 96px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px">
-<a href="index.html" class="nx" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px"><span class="lbl"><span class="arrow back">←</span> Back to</span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">All work</span></a>
-<a href="professor-reviews.html" class="nx" style="text-decoration: none; color: #F4EADB; background: #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px; text-align: right"><span class="lbl" style="color: #F0B47E">Next case · 02 <span class="arrow">→</span></span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">Professor Reviews</span></a>
+<a href="professor-reviews.html" class="nx" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px"><span class="lbl"><span class="arrow back">←</span> Previous case · 01</span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">Professor Reviews</span></a>
+<a href="index.html#work" class="nx" style="text-decoration: none; color: #F4EADB; background: #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px; text-align: right"><span class="lbl" style="color: #F0B47E">Back to <span class="arrow">→</span></span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">All work</span></a>
 </nav>
 
 <!-- CONTACT -->
@@ -226,5 +235,6 @@ a{color:#2E2119}a:hover{color:#A3482A}
 </footer>
 
 </div>
+<script src="assets/ui.js"></script>
 </body>
 </html>

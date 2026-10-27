@@ -17,127 +17,114 @@ a{color:#2E2119}a:hover{color:#A3482A}
 .lbl{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
 .disp{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.88}
 .ital{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
-.btn{transition:transform .25s ease, box-shadow .25s ease}
-.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 #2E2119}
+.btn,.cta{transition:transform .25s ease, box-shadow .25s ease}
+.btn:hover,.cta:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 #2E2119}
 .ul{background-image:linear-gradient(currentColor,currentColor);background-size:0 2px;background-repeat:no-repeat;background-position:0 85%;transition:background-size .35s ease}
 .ul:hover{background-size:100% 2px}
 @keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
 .rise{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
 @keyframes marquee{to{transform:translateX(-50%)}}
-.marquee{display:inline-flex;animation:marquee 36s linear infinite}
+.marquee{display:inline-flex;animation:marquee 60s linear infinite}
+.ticker:hover .marquee{animation-play-state:paused}
 @keyframes spin{to{transform:rotate(360deg)}}
-.spin{animation:spin 20s linear infinite}
-@keyframes bob{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-4deg) translateY(-10px)}}
-.bob{animation:bob 5s ease-in-out infinite}
-@keyframes sway{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-.sway{animation:sway 9s ease-in-out infinite}
+.spin{animation:spin 40s linear infinite}
 .card{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .card:hover{transform:translateY(-10px);color:#2E2119}
 .card .thumb{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-.card:hover .thumb{transform:scale(1.06) rotate(-1deg)}
+.card:hover .thumb{transform:scale(1.04)}
 .card .num{transition:color .3s}
 .card:hover .num{color:#2E2119}
 .arrow{display:inline-block;transition:transform .3s}
-.card:hover .arrow,.btn:hover .arrow{transform:translateX(8px)}
+.card:hover .arrow,.btn:hover .arrow,.cta:hover .arrow{transform:translateX(8px)}
 @supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (max-width:640px){html{scroll-padding-top:0}}
 </style>
-<style>html{scroll-behavior:smooth}</style>
+<link rel="stylesheet" href="assets/ui.css">
 </head>
 <body>
-<div style="--accent: #A3482A; background: #F4EADB; color: #2E2119; font-family: 'Archivo', system-ui, sans-serif; min-height: 100vh; overflow-x: hidden">
+<a class="skip" href="#main">Skip to content</a>
+<div style="--accent: #A3482A; background: #F4EADB; color: #2E2119; font-family: 'Archivo', system-ui, sans-serif; min-height: 100vh; overflow-x: clip">
 
-<!-- NAV -->
-<header style="background: #2E2119; color: #F4EADB">
-<div style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; min-height: 72px">
-<a href="index.html" style="font-family: 'Anton', sans-serif; font-size: 26px; letter-spacing: 0.02em; text-decoration: none; color: #F4EADB; display: flex; align-items: center; gap: 10px">
-<span style="background: var(--accent); color: #F4EADB; padding: 2px 10px; border-radius: 6px">VR</span>
-<span>VYSHNAV RAMESH</span>
-</a>
-<nav aria-label="Main" class="lbl" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px; letter-spacing: 0.08em">
-<a href="#top" aria-current="page" style="color: #F4EADB; text-decoration: none; border-bottom: 3px solid #E0A84A; padding: 12px 0 9px">01 Home</a>
-<a href="#work" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">02 Work</a>
-<a href="#about" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">03 About</a>
-<a href="#contact" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">04 Contact</a>
-<a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn" style="background: #E0A84A; color: #2E2119; text-decoration: none; padding: 12px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; border-radius: 999px">Resume (PDF) ↓</a>
+<!-- NAV (v2: sticky on desktop, compact on mobile, scroll-spy active state, no numbering) -->
+<header class="hdr sticky">
+<div class="hdr-in">
+<a href="index.html" class="brand" aria-label="Vyshnav Ramesh — home"><span class="mono">VR</span><span>VYSHNAV RAMESH</span></a>
+<nav aria-label="Main" class="lbl mainnav" data-spy>
+<a href="#work">Work</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
 </nav>
+<a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn cv lbl">Resume (PDF) ↓</a>
 </div>
 </header>
 
-<!-- DATELINE -->
+<!-- DATELINE (v2: plain language instead of "Issue 01") -->
 <div id="top" style="border-bottom: 2px solid #2E2119">
-<div class="lbl" style="max-width: 1440px; margin: 0 auto; padding: 10px clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px"><span>UX Portfolio</span><span style="color: var(--accent)">★ Issue 02 ★</span><span>Fall 2026</span></div>
+<div class="lbl" style="max-width: 1440px; margin: 0 auto; padding: 10px clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px"><span class="hide-m">UX Research Portfolio</span><span class="avail" style="color: #2E5E3E">Open to UX research internships</span><span>RIT Dubai · Fall 2026</span></div>
 </div>
 
 <!-- COVER -->
-<section aria-label="Introduction" style="max-width: 1440px; margin: 0 auto; padding: clamp(32px, 5vw, 72px) clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 80px); align-items: center; justify-content: space-between">
+<section id="main" tabindex="-1" aria-label="Introduction" style="max-width: 1440px; margin: 0 auto; padding: clamp(32px, 5vw, 72px) clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 80px); align-items: center; justify-content: space-between">
 
-<div style="display: flex; flex-direction: column; gap: 32px; flex: 1 1 440px; min-width: 0">
+<div style="display: flex; flex-direction: column; gap: 28px; flex: 1 1 440px; min-width: 0">
 <p class="lbl rise" style="margin: 0; color: var(--accent); font-size: 14px">Human-Computer Interaction · UX Research</p>
 <h1 class="disp" style="margin: 0; font-size: clamp(4.2rem, 10.5vw, 10.5rem); letter-spacing: -0.01em"><span class="rise" style="display: block; animation-delay: 0.1s">Vyshnav</span><span class="rise" style="display: block; animation-delay: 0.25s">Ramesh<span style="color: var(--accent)">.</span></span></h1>
 <div class="rise" style="display: grid; grid-template-columns: 6px minmax(0, 1fr); gap: 20px; animation-delay: .45s">
 <div style="background: #E0A84A; border-radius: 3px"></div>
 <p style="margin: 0; font-size: clamp(1.05rem, 1.4vw, 1.3rem); line-height: 1.55; max-width: 34em">Curious and methodical UX Researcher with a background in Human-Computer Interaction and hands-on training in usability testing, semi-structured interviews, and thematic analysis.</p>
 </div>
-<dl class="rise" style="margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid #2E2119; animation-delay: .6s">
+<div class="cta-row rise" style="animation-delay: .55s">
+<a href="#work" class="cta primary">See my case studies <span class="arrow">↓</span></a>
+<a href="#contact" class="cta ghost">Get in touch</a>
+</div>
+<dl class="rise" style="margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid #2E2119; animation-delay: .65s">
 <div style="padding: 14px 12px 0 0; border-right: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">GPA</dt><dd class="disp" style="margin: 6px 0 0; font-size: clamp(2rem, 3.4vw, 3rem)">3.89</dd></div>
 <div style="padding: 14px 12px 0"><dt class="lbl" style="color: #8A3A20">Dean’s list</dt><dd class="disp" style="margin: 6px 0 0; font-size: clamp(2rem, 3.4vw, 3rem)">5×</dd></div>
 <div style="padding: 14px 0 0 12px; border-left: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">Class of</dt><dd class="disp" style="margin: 6px 0 0; font-size: clamp(2rem, 3.4vw, 3rem)">2027</dd></div>
 </dl>
-
 </div>
 
 <div class="rise" style="position: relative; animation-delay: .3s; padding: 24px 24px 0 0; flex: 0 1 380px; max-width: 380px; margin-inline: auto">
 <figure style="margin: 0; background: var(--accent); border-radius: 18px; padding: clamp(16px, 2.4vw, 28px); display: flex; flex-direction: column; gap: 16px">
-<div style="aspect-ratio: 4 / 5; border-radius: 12px; overflow: hidden; background: #E8D5B9"><img class="sway" src="assets/vyshnav.jpg" alt="Portrait of Vyshnav Ramesh" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 45% 30%"></div>
+<div style="aspect-ratio: 4 / 5; border-radius: 12px; overflow: hidden; background: #E8D5B9"><img src="assets/vyshnav.jpg" alt="Portrait of Vyshnav Ramesh" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 45% 30%"></div>
 <figcaption style="display: flex; flex-direction: column; gap: 6px; color: #F4EADB">
 <span class="disp" style="font-size: clamp(1.6rem, 2.6vw, 2.4rem)">UX Researcher</span>
 <span class="lbl" style="color: #F6CF8A">CIT · RIT Dubai</span>
 </figcaption>
 </figure>
-<div style="position: absolute; top: 0; right: 0; width: 120px; height: 120px; border-radius: 50%; background: #E0A84A; display: flex; align-items: center; justify-content: center">
-<svg class="spin" viewBox="0 0 200 200" width="120" height="120" aria-hidden="true" style="position: absolute; inset: 0">
+<div aria-hidden="true" style="position: absolute; top: 0; right: 0; width: 120px; height: 120px; border-radius: 50%; background: #E0A84A; display: flex; align-items: center; justify-content: center">
+<svg class="spin" viewBox="0 0 200 200" width="120" height="120" style="position: absolute; inset: 0">
 <defs><path id="badge-circ" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"></path></defs>
-<text font-family="Anton, sans-serif" font-size="18" letter-spacing="3.2" fill="#2E2119"><textPath href="#badge-circ">UX RESEARCH ★ HCI ★ PORTFOLIO ★ ISSUE 02 ★ </textPath></text>
+<text font-family="Anton, sans-serif" font-size="18" letter-spacing="3.2" fill="#2E2119"><textPath href="#badge-circ">UX RESEARCH ★ HCI ★ RIT DUBAI ★ PORTFOLIO ★ </textPath></text>
 </svg>
-<span class="disp" style="font-size: 36px; position: relative">02</span>
+<span class="disp" style="font-size: 30px; position: relative">✺</span>
 </div>
-<div class="bob lbl" style="position: absolute; left: -16px; top: 66%; background: #F4EADB; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px">2 case studies inside ↓</div>
 </div>
 </section>
 
-<!-- TICKER -->
-<div aria-hidden="true" style="background: #2E2119; color: #F4EADB; overflow: hidden; white-space: nowrap; padding: 16px 0; transform: rotate(-1.2deg); margin: 8px -20px">
-<div class="marquee disp" style="font-size: clamp(1.5rem, 2.8vw, 2.4rem); letter-spacing: 0.04em; gap: 28px">
+<!-- TICKER (v2: level, slower, pauses on hover) -->
+<div class="ticker" aria-hidden="true" style="background: #2E2119; color: #F4EADB; overflow: hidden; white-space: nowrap; padding: 14px 0; margin: 8px 0 0">
+<div class="marquee disp" style="font-size: clamp(1.3rem, 2.4vw, 2rem); letter-spacing: 0.04em; gap: 28px">
 <span>Usability testing</span><span style="color: #E0A84A">✺</span><span>Semi-structured interviews</span><span style="color: #E0A84A">✺</span><span>Thematic analysis</span><span style="color: #E0A84A">✺</span><span>Human-Computer Interaction</span><span style="color: #E0A84A">✺</span>
 <span>Usability testing</span><span style="color: #E0A84A">✺</span><span>Semi-structured interviews</span><span style="color: #E0A84A">✺</span><span>Thematic analysis</span><span style="color: #E0A84A">✺</span><span>Human-Computer Interaction</span><span style="color: #E0A84A">✺</span>
 </div>
 </div>
 
-<!-- CONTENTS -->
+<!-- WORK (v2: plain heading, scannable role/methods/result on each card) -->
 <section id="work" aria-labelledby="work-h" style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px)">
 <div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; border-bottom: 6px solid #2E2119; padding-bottom: 14px">
-<h2 id="work-h" class="disp" style="margin: 0; font-size: clamp(4rem, 10vw, 9rem)">In this <span class="ital" style="color: var(--accent); font-size: 0.9em">issue</span></h2>
-<p style="margin: 0; max-width: 22em; font-size: 17px; line-height: 1.55">Two case studies, each walking through the problem, the process and what I learned.</p>
+<h2 id="work-h" class="disp" style="margin: 0; font-size: clamp(4rem, 10vw, 9rem)">Selected <span class="ital" style="color: var(--accent); font-size: 0.9em">work</span></h2>
+<p style="margin: 0; max-width: 22em; font-size: 17px; line-height: 1.55">Two case studies. Each one shows my role, the methods I used and what came out of it.</p>
 </div>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(20px, 2.5vw, 36px); padding-top: 36px">
-
-<a href="virufy.html" class="card reveal" style="text-decoration: none; color: #2E2119; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: flex-start; gap: 16px">
-<span class="disp num" style="font-size: 96px; line-height: 0.8; color: var(--accent)">01</span>
-<span class="lbl" style="padding-top: 6px">Internship<br>Health tech</span>
-</div>
-<div style="border-radius: 14px; overflow: hidden"><img class="thumb" src="assets/virufy-card.png" alt="Virufy app screen" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover"></div>
-<h3 class="disp" style="margin: 0; font-size: 46px">Virufy</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55">A not-for-profit healthcare company&nbsp;</p>
-<span class="lbl" style="font-size: 14px; padding: 12px 0; color: var(--accent)">Read the case study <span class="arrow">→</span></span>
-</a>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(28px, 3vw, 44px); padding-top: 36px">
 
 <a href="professor-reviews.html" class="card reveal" style="text-decoration: none; color: #2E2119; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; align-items: flex-start; gap: 16px">
-<span class="disp num" style="font-size: 96px; line-height: 0.8; color: var(--accent)">02</span>
-<span class="lbl" style="padding-top: 6px">UX capstone<br>Mobile app</span>
+<span class="disp num" style="font-size: 96px; line-height: 0.8; color: var(--accent)">01</span>
+<span class="lbl" style="padding-top: 6px">UX research<br>Mobile app · Capstone</span>
 </div>
 <div style="border-radius: 14px; overflow: hidden"><div class="thumb" aria-hidden="true" style="background: #E8D5B9; aspect-ratio: 4 / 3; display: flex; align-items: flex-start; justify-content: center; gap: 4%; padding-top: 6%; box-sizing: border-box">
 <img src="assets/pr-professor-reviews.jpg" alt="" style="width: 26%; aspect-ratio: 9 / 19; object-fit: cover; object-position: top; border-radius: 10px; border: 3px solid #2E2119; background: #fff; transform: rotate(-5deg) translateY(8%)">
@@ -146,17 +133,48 @@ a{color:#2E2119}a:hover{color:#A3482A}
 </div></div>
 <h3 class="disp" style="margin: 0; font-size: 46px">Professor Reviews</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.55">A student-centred app for choosing courses and professors through peer reviews and early syllabus access.</p>
-<span class="lbl" style="font-size: 14px; padding: 12px 0; color: var(--accent)">Read the case study <span class="arrow">→</span></span>
+<dl class="meta lbl">
+<dt>My role</dt><dd style="font-family: 'Archivo', sans-serif; font-weight: 500; letter-spacing: 0; text-transform: none">UX researcher &amp; designer (team of 4)</dd>
+<dt>Methods</dt><dd style="font-family: 'Archivo', sans-serif; font-weight: 500; letter-spacing: 0; text-transform: none">Interviews, affinity mapping, personas, usability testing</dd>
+<dt>Result</dt><dd style="font-family: 'Archivo', sans-serif; font-weight: 500; letter-spacing: 0; text-transform: none">100% task completion · 4.7/5 ease of use</dd>
+</dl>
+<span class="lbl" style="font-size: 14px; padding: 8px 0; color: var(--accent)">Read the case study <span class="arrow">→</span></span>
+</a>
+
+<a href="virufy.html" class="card reveal" style="text-decoration: none; color: #2E2119; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: flex-start; gap: 16px">
+<span class="disp num" style="font-size: 96px; line-height: 0.8; color: var(--accent)">02</span>
+<span class="lbl" style="padding-top: 6px">Internship<br>Health tech · AI</span>
+</div>
+<div style="border-radius: 14px; overflow: hidden"><div class="thumb" aria-hidden="true" style="background: #E8D5B9; aspect-ratio: 4 / 3; display: flex; align-items: flex-start; justify-content: center; gap: 5%; padding-top: 6%; box-sizing: border-box">
+<img src="assets/virufy-welcome.png" alt="" style="width: 36%; aspect-ratio: 3 / 4.2; object-fit: cover; object-position: top; border-radius: 10px; border: 3px solid #2E2119; background: #fff; transform: rotate(-4deg) translateY(4%)">
+<img src="assets/virufy-record.png" alt="" style="width: 36%; aspect-ratio: 3 / 4.2; object-fit: cover; object-position: top; border-radius: 10px; border: 3px solid #2E2119; background: #fff; transform: rotate(4deg) translateY(8%)">
+</div></div>
+<h3 class="disp" style="margin: 0; font-size: 46px">Virufy</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Helped adapt and ship the UAE demo of a non-profit’s AI cough-screening app. I designed and built the welcome &amp; login flow.</p>
+<dl class="meta lbl">
+<dt>My role</dt><dd style="font-family: 'Archivo', sans-serif; font-weight: 500; letter-spacing: 0; text-transform: none">Mobile app developer intern (team of 6)</dd>
+<dt>Methods</dt><dd style="font-family: 'Archivo', sans-serif; font-weight: 500; letter-spacing: 0; text-transform: none">Cultural adaptation, Figma design, React build</dd>
+<dt>Result</dt><dd style="font-family: 'Archivo', sans-serif; font-weight: 500; letter-spacing: 0; text-transform: none">Live public demo on virufy.org</dd>
+</dl>
+<span class="lbl" style="font-size: 14px; padding: 8px 0; color: var(--accent)">Read the case study <span class="arrow">→</span></span>
 </a>
 
 </div>
 </section>
 
-<!-- PULL QUOTE / ABOUT -->
+<!-- ABOUT (v2: a real "About" section — the nav label now matches what you land on) -->
 <section id="about" aria-labelledby="about-h" style="background: var(--accent); color: #F4EADB; border-radius: clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) 0 0">
+<div style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px) clamp(56px, 7vw, 112px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 36px)">
 
+<div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(20px, 4vw, 64px); align-items: end; padding-bottom: clamp(16px, 2vw, 28px)">
+<h2 id="about-h" class="disp" style="margin: 0; font-size: clamp(4rem, 10vw, 9rem)">About <span class="ital" style="color: #F6CF8A; font-size: .9em">me</span></h2>
+<div style="display: flex; flex-direction: column; gap: 14px; font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.6">
+<p style="margin: 0">I’m a Computing &amp; IT student at RIT Dubai, minoring in Mathematics and graduating in 2027. I came to UX through Human-Computer Interaction, and the part I enjoy most is listening to people, finding the pattern in what they say and turning it into something a team can build.</p>
+<p style="margin: 0">My development background (React, Java, Python) means I can talk feasibility with engineers, and my research training keeps the work grounded in what users actually need.</p>
+</div>
+</div>
 
-<div style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px) clamp(56px, 7vw, 112px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 36px)">
 <div class="reveal" style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; border-top: 2px solid #F4EADB; padding-top: 28px">
 <h3 class="disp" style="margin: 0; font-size: clamp(2.4rem, 4.4vw, 4rem)">Credentials<span style="color: #F6CF8A">.</span></h3>
 <a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn lbl" style="background: #F4EADB; color: #2E2119; text-decoration: none; font-size: 14px; padding: 14px 22px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px">Read the full CV (PDF) <span class="arrow">↗</span></a>
@@ -170,11 +188,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <p class="disp" style="margin: 0; font-size: clamp(1.9rem, 2.6vw, 2.4rem); line-height: 0.95">B.S. Computing &amp; Information Technology</p>
 <p style="margin: 10px 0 0; font-size: 16px; line-height: 1.5">Minor in Mathematics<br>Rochester Institute of Technology, Dubai</p>
 </div>
-<dl style="margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid #2E2119; margin-top: auto">
-<div style="padding: 14px 12px 0 0; border-right: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">GPA</dt><dd class="disp" style="margin: 6px 0 0; font-size: 2.4rem; color: var(--accent)">3.89</dd></div>
-<div style="padding: 14px 0 0 14px"><dt class="lbl" style="color: #8A3A20">Dean’s List</dt><dd class="disp" style="margin: 6px 0 0; font-size: 2.4rem; color: var(--accent)">5 sem.</dd></div>
-</dl>
-<span class="lbl" style="align-self: flex-start; background: #E0A84A; border-radius: 999px; padding: 8px 14px; font-size: 12px">✺ Academic scholarship</span>
+<span class="lbl" style="align-self: flex-start; background: #E0A84A; border-radius: 999px; padding: 8px 14px; font-size: 12px">✺ Academic scholarship · Dean’s List ×5</span>
 </article>
 
 <article class="reveal" style="background: #F4EADB; color: #2E2119; border-radius: 20px; padding: clamp(24px, 2.6vw, 36px); display: flex; flex-direction: column; gap: 20px">
@@ -184,7 +198,7 @@ a{color:#2E2119}a:hover{color:#A3482A}
 <span aria-hidden="true" style="position: absolute; left: -8px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent)"></span>
 <p class="lbl" style="margin: 0; color: #6B5644">Jun – Aug 2025</p>
 <p class="disp" style="margin: 6px 0 0; font-size: 1.9rem">Virufy</p>
-<p style="margin: 4px 0 0; font-size: 16px">Mobile Application Developer</p>
+<p style="margin: 4px 0 0; font-size: 16px">Mobile Application Developer · <a href="virufy.html" style="color: #8A3A20">case study →</a></p>
 </li>
 <li style="position: relative; padding-left: 22px">
 <span aria-hidden="true" style="position: absolute; left: -8px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #E0A84A"></span>
@@ -222,34 +236,37 @@ a{color:#2E2119}a:hover{color:#A3482A}
 </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT (v2: copy-email button with confirmation) -->
 <footer id="contact" aria-labelledby="contact-h" style="background: #2E2119; color: #F4EADB">
 <div style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px) 32px; display: flex; flex-direction: column; gap: 40px">
 <div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
 <h2 id="contact-h" class="disp" style="margin: 0; font-size: clamp(4.5rem, 13vw, 12rem); line-height: 0.82">Let’s <span class="ital" style="color: #E0A84A">connect.</span></h2>
-<a id="resume" href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn lbl" style="background: #E0A84A; color: #2E2119; text-decoration: none; font-size: 16px; padding: 18px 30px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px">Download Resume (PDF) <span class="arrow">↓</span></a>
+<a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn lbl" style="background: #E0A84A; color: #2E2119; text-decoration: none; font-size: 16px; padding: 18px 30px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px">Download Resume (PDF) <span class="arrow">↓</span></a>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); border-top: 2px solid #F4EADB">
-<a href="mailto:vyshnavramesh2005@gmail.com" style="color: #F4EADB; text-decoration: none; padding: 20px 0; border-bottom: 1px solid #5A4537; display: flex; flex-direction: column; gap: 4px">
+<div style="padding: 20px 0; border-bottom: 1px solid #5A4537; display: flex; flex-direction: column; gap: 8px">
 <span class="lbl" style="color: #F0B47E">Email</span>
-<span class="ul" style="font-size: 18px; align-self: flex-start">vyshnavramesh2005@gmail.com</span>
-</a>
+<a href="mailto:vyshnavramesh2005@gmail.com" class="ul" style="color: #F4EADB; text-decoration: none; font-size: 18px; align-self: flex-start">vyshnavramesh2005@gmail.com</a>
+<button type="button" class="copy" data-copy="vyshnavramesh2005@gmail.com" aria-describedby="copy-status">Copy email</button>
+<span id="copy-status" class="copied" role="status" aria-live="polite"></span>
+</div>
 <a href="https://www.linkedin.com/in/vyshnav-ramesh-747388252/" target="_blank" rel="noopener" style="color: #F4EADB; text-decoration: none; padding: 20px 0; border-bottom: 1px solid #5A4537; display: flex; flex-direction: column; gap: 4px">
-<span class="lbl" style="color: #F0B47E">LinkedIn</span>
+<span class="lbl" style="color: #F0B47E">LinkedIn ↗</span>
 <span class="ul" style="font-size: 18px; align-self: flex-start">in/vyshnav-ramesh</span>
 </a>
 <a href="https://github.com/Vyshnav-Ramesh" target="_blank" rel="noopener" style="color: #F4EADB; text-decoration: none; padding: 20px 0; border-bottom: 1px solid #5A4537; display: flex; flex-direction: column; gap: 4px">
-<span class="lbl" style="color: #F0B47E">GitHub</span>
+<span class="lbl" style="color: #F0B47E">GitHub ↗</span>
 <span class="ul" style="font-size: 18px; align-self: flex-start">github.com/Vyshnav-Ramesh</span>
 </a>
 </div>
 <div class="lbl" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-weight: 600; color: #C9B8A4">
 <span>Vyshnav Ramesh · UX Research Portfolio</span>
-<span>Issue 02 · 2026</span>
+<a href="#top" style="color: #C9B8A4">Back to top ↑</a>
 </div>
 </div>
 </footer>
 
 </div>
+<script src="assets/ui.js"></script>
 </body>
 </html>
