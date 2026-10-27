@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Professor Reviews — Case Study 02</title>
+<meta name="description" content="Case study: Professor Reviews, a student-centred app for choosing courses and professors at RIT Dubai.">
+<meta property="og:title" content="Professor Reviews — Case Study 02">
+<meta property="og:description" content="Case study: Professor Reviews, a student-centred app for choosing courses and professors at RIT Dubai.">
+<meta property="og:image" content="assets/vyshnav.jpg">
+<link rel="icon" href="assets/vyshnav.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700&amp;family=Archivo+Narrow:wght@500;600;700&amp;family=Instrument+Serif:ital@1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4EADB}
+a{color:#2E2119}a:hover{color:#A3482A}
+.lbl{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.disp{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.88}
+.ital{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+.btn{transition:transform .25s ease, box-shadow .25s ease}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 #2E2119}
+.ul{background-image:linear-gradient(currentColor,currentColor);background-size:0 2px;background-repeat:no-repeat;background-position:0 85%;transition:background-size .35s ease}
+.ul:hover{background-size:100% 2px}
+.pill{transition:background .25s, color .25s}
+.pill:hover{background:#2E2119;color:#F4EADB}
+.tile{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.tile:hover{transform:translateY(-6px) rotate(-.6deg)}
+.arrow{display:inline-block;transition:transform .3s}
+.btn:hover .arrow,.nx:hover .arrow{transform:translateX(8px)}
+.nx:hover .arrow.back{transform:translateX(-8px)}
+.phone{display:block;width:100%;aspect-ratio:9/19;object-fit:cover;object-position:top;border-radius:clamp(10px,1.6vw,22px);border:clamp(3px,.5vw,6px) solid #2E2119;box-sizing:border-box;background:#fff;box-shadow:0 14px 30px rgba(46,33,25,.28)}
+@keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+.rise{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin 20s linear infinite}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.float{animation:float 6s ease-in-out infinite}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html{scroll-behavior:smooth}</style>
+</head>
+<body>
+<div style="--accent: #A3482A; background: #F4EADB; color: #2E2119; font-family: 'Archivo', system-ui, sans-serif; min-height: 100vh; overflow-x: clip">
+
+<!-- NAV -->
+<header style="background: #2E2119; color: #F4EADB">
+<div style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; min-height: 72px">
+<a href="index.html" style="font-family: 'Anton', sans-serif; font-size: 26px; letter-spacing: 0.02em; text-decoration: none; color: #F4EADB; display: flex; align-items: center; gap: 10px">
+<span style="background: var(--accent); color: #F4EADB; padding: 2px 10px; border-radius: 6px">VR</span>
+<span>VYSHNAV RAMESH</span>
+</a>
+<nav aria-label="Main" class="lbl" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px; letter-spacing: 0.08em">
+<a href="index.html" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">01 Home</a>
+<a href="index.html#work" aria-current="page" style="color: #F4EADB; text-decoration: none; border-bottom: 3px solid #E0A84A; padding: 12px 0 9px">02 Work</a>
+<a href="index.html#about" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">03 About</a>
+<a href="#contact" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">04 Contact</a>
+<a href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="btn" style="background: #E0A84A; color: #2E2119; text-decoration: none; padding: 12px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; border-radius: 999px">Resume (PDF) ↓</a>
+</nav>
+</div>
+</header>
+
+<!-- 01 INTRO -->
+<section aria-labelledby="case-title" style="max-width: 1440px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 56px) clamp(40px, 5vw, 72px)">
+<nav aria-label="Breadcrumb" class="lbl" style="display: flex; gap: 10px; align-items: center; padding: 12px 0 28px">
+<a href="index.html" class="ul" style="text-decoration: none; color: #2E2119; padding: 10px 0">Work</a>
+<span aria-hidden="true">/</span>
+<span style="color: var(--accent)">Professor Reviews</span>
+</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: end">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div class="rise" style="display: flex; align-items: center; gap: 16px">
+<span class="disp" style="font-size: 72px; color: var(--accent)">02</span>
+<span class="lbl">Case study<br>UX capstone · Mobile app</span>
+</div>
+<h1 id="case-title" class="disp rise" style="margin: 0; font-size: clamp(4rem, 9vw, 8.5rem); animation-delay: .15s">Professor<br>Reviews</h1>
+<p class="rise" style="margin: 0; font-size: clamp(1.15rem, 1.8vw, 1.6rem); line-height: 1.45; max-width: 30em; animation-delay: .3s"><span class="ital" style="font-size: 1.15em; color: var(--accent)">In one line —</span> a student-centred app that helps RIT Dubai undergraduates choose courses, professors, minors and immersions with verified peer reviews and early access to syllabi.</p>
+</div>
+<dl class="rise" style="margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid #2E2119; animation-delay: .45s">
+<div style="padding: 16px 16px 16px 0; border-bottom: 1px solid #CDB89C; border-right: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">Role</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">UX researcher &amp; designer: ideation, sketching, prototyping, documentation, heuristic evaluation</dd></div>
+<div style="padding: 16px 0 16px 16px; border-bottom: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">Timeline</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">Fall 2025 · ISTE 260 Designing the User Experience, RIT Dubai</dd></div>
+<div style="padding: 16px 16px 16px 0; border-right: 1px solid #CDB89C"><dt class="lbl" style="color: #8A3A20">Methods</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">Semi-structured interviews, affinity mapping, personas, journey maps, usability testing, heuristic &amp; WCAG review</dd></div>
+<div style="padding: 16px 0 16px 16px"><dt class="lbl" style="color: #8A3A20">Team</dt><dd style="margin: 6px 0 0; font-size: 17px; line-height: 1.4">4 designers, “Interface Innovators”: Iqram Haider, Imaad Shadab, Ameen Ahmed, Vyshnav Ramesh</dd></div>
+</dl>
+</div>
+<div class="rise" style="position: relative; margin-top: clamp(40px, 5vw, 64px); animation-delay: .55s">
+<div aria-label="Five screens from the high-fidelity prototype" role="img" style="background: #E8D5B9; aspect-ratio: 21 / 9; border-radius: 20px; overflow: hidden; display: flex; justify-content: center; align-items: flex-start; gap: 3%; padding-top: 5%; box-sizing: border-box">
+<div class="float" style="width: 14%; transform: rotate(-7deg) translateY(10%)"><img class="phone" src="assets/pr-professor-reviews.jpg" alt=""></div>
+<div class="float" style="width: 14%; transform: rotate(-3deg) translateY(4%); animation-delay: -1s"><img class="phone" src="assets/pr-course-reviews.jpg" alt=""></div>
+<div class="float" style="width: 15%; animation-delay: -2s"><img class="phone" src="assets/pr-home.jpg" alt=""></div>
+<div class="float" style="width: 14%; transform: rotate(3deg) translateY(4%); animation-delay: -3s"><img class="phone" src="assets/pr-syllabus.jpg" alt=""></div>
+<div class="float" style="width: 14%; transform: rotate(7deg) translateY(10%); animation-delay: -4s"><img class="phone" src="assets/pr-compare.jpg" alt=""></div>
+</div>
+<div style="position: absolute; right: clamp(12px, 3vw, 40px); top: -48px; width: 112px; height: 112px; border-radius: 50%; background: #E0A84A; display: flex; align-items: center; justify-content: center">
+<svg class="spin" viewBox="0 0 200 200" width="112" height="112" aria-hidden="true" style="position: absolute; inset: 0">
+<defs><path id="p-circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"></path></defs>
+<text font-family="Anton, sans-serif" font-size="22" letter-spacing="4" fill="#2E2119"><textPath href="#p-circ">CASE STUDY ★ REVIEWS ★ 02 ★ </textPath></text>
+</svg>
+<span aria-hidden="true" style="font-size: 30px; position: relative">✺</span>
+</div>
+</div>
+</section>
+
+<!-- STICKY IN-PAGE NAV -->
+<nav aria-label="On this page" style="position: sticky; top: 0; z-index: 5; background: #F4EADB; border-top: 2px solid #2E2119; border-bottom: 2px solid #2E2119">
+<div class="lbl" style="max-width: 1440px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<a href="#problem" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">02 Problem</a>
+<a href="#research" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Research</a>
+<a href="#solution" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">03 Solution</a>
+<a href="#technology" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">04 Design</a>
+<a href="#outcome" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">05 Outcome</a>
+<a href="#explore" class="pill" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 999px; padding: 10px 16px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">06 Explore</a>
+</div>
+</nav>
+
+<!-- 02 PROBLEM -->
+<section id="problem" aria-labelledby="problem-h" style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(32px, 5vw, 72px)">
+<div class="reveal">
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">02 — The problem</p>
+<h2 id="problem-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">Registering <span class="ital" style="color: var(--accent)">blind</span></h2>
+</div>
+<div class="reveal" style="display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-size: clamp(1.2rem, 1.8vw, 1.55rem); line-height: 1.5; font-weight: 500">RIT Dubai students choose courses and professors with almost no reliable information. SIS shows only a short course description, syllabi arrive after the semester starts, and advice comes from WhatsApp threads that contradict each other.</p>
+<div>
+<h3 class="lbl" style="margin: 0 0 8px; color: #8A3A20">Why this problem matters</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65">Academic planning shapes students’ stress, confidence and long-term success. Without trustworthy, structured information they misjudge workload, make scheduling mistakes and drop courses weeks in. Freshmen and sophomores are hit hardest, along with anyone picking a minor or immersion, and the pressure peaks in the last-minute rush of registration week.</p>
+</div>
+<div>
+<h3 class="lbl" style="margin: 0 0 12px; color: #8A3A20">Project objectives</h3>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+<li style="display: flex; gap: 14px; align-items: baseline; font-size: 17px; line-height: 1.45; border-bottom: 1px solid #CDB89C; padding-bottom: 10px"><span class="disp" style="font-size: 28px; color: var(--accent)">A</span>Bring course, professor, minor and immersion information into one trusted place.</li>
+<li style="display: flex; gap: 14px; align-items: baseline; font-size: 17px; line-height: 1.45; border-bottom: 1px solid #CDB89C; padding-bottom: 10px"><span class="disp" style="font-size: 28px; color: var(--accent)">B</span>Make expectations transparent before registration: syllabi, workload and teaching style.</li>
+<li style="display: flex; gap: 14px; align-items: baseline; font-size: 17px; line-height: 1.45; border-bottom: 1px solid #CDB89C; padding-bottom: 10px"><span class="disp" style="font-size: 28px; color: var(--accent)">C</span>Let students compare options side by side and share experiences anonymously.</li>
+</ol>
+</div>
+</div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" aria-labelledby="research-h" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px) clamp(56px, 7vw, 104px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
+<div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; border-bottom: 6px solid #2E2119; padding-bottom: 14px">
+<div>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">Research — what students told us</p>
+<h2 id="research-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">In their <span class="ital" style="color: var(--accent)">words</span></h2>
+</div>
+<p style="margin: 0; max-width: 28em; font-size: 16px; line-height: 1.55">Mostly in-person semi-structured interviews (10 questions) with undergraduates in psychology, engineering and computing who had each registered at least twice. Responses were coded, affinity-clustered and turned into themes.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px">
+<blockquote class="tile reveal" style="margin: 0; background: #E0A84A; border-radius: 4px; padding: 22px; transform: rotate(-1.5deg); box-shadow: 0 8px 18px rgba(46,33,25,.18)"><p class="ital" style="margin: 0; font-size: 26px; line-height: 1.15">“Wish I had the syllabus before enrolling.”</p></blockquote>
+<blockquote class="tile reveal" style="margin: 0; background: #F0B47E; border-radius: 4px; padding: 22px; transform: rotate(1deg); box-shadow: 0 8px 18px rgba(46,33,25,.18)"><p class="ital" style="margin: 0; font-size: 26px; line-height: 1.15">“I rely on friends — not always reliable.”</p></blockquote>
+<blockquote class="tile reveal" style="margin: 0; background: #FFF6E8; border-radius: 4px; padding: 22px; transform: rotate(-.5deg); box-shadow: 0 8px 18px rgba(46,33,25,.18)"><p class="ital" style="margin: 0; font-size: 26px; line-height: 1.15">“Comfortable sharing, if it’s anonymous.”</p></blockquote>
+<blockquote class="tile reveal" style="margin: 0; background: #E0A84A; border-radius: 4px; padding: 22px; transform: rotate(1.5deg); box-shadow: 0 8px 18px rgba(46,33,25,.18)"><p class="ital" style="margin: 0; font-size: 26px; line-height: 1.15">“Navigation of SIS is slow and, overall, bad.”</p></blockquote>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(24px, 4vw, 56px); align-items: start">
+<div class="reveal">
+<h3 class="lbl" style="margin: 0 0 14px; color: #8A3A20">Four themes from the affinity map</h3>
+<ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #2E2119">
+<li style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; padding: 16px 0; border-bottom: 1px solid #CDB89C"><span class="disp" style="font-size: 40px; color: var(--accent)">01</span><span style="font-size: 17px; line-height: 1.45"><strong>No reliable, central source.</strong> SIS is thin, word of mouth varies person to person, and finding a syllabus is scattered.</span></li>
+<li style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; padding: 16px 0; border-bottom: 1px solid #CDB89C"><span class="disp" style="font-size: 40px; color: var(--accent)">02</span><span style="font-size: 17px; line-height: 1.45"><strong>Decisions avoid risk instead of exploring.</strong> Students pick “safe-reputation” professors and avoid unfamiliar ones.</span></li>
+<li style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; padding: 16px 0; border-bottom: 1px solid #CDB89C"><span class="disp" style="font-size: 40px; color: var(--accent)">03</span><span style="font-size: 17px; line-height: 1.45"><strong>Planning is fragmented.</strong> SIS, WhatsApp groups, Excel sheets and old syllabi all have to be stitched together by hand.</span></li>
+<li style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; padding: 16px 0; border-bottom: 1px solid #CDB89C"><span class="disp" style="font-size: 40px; color: var(--accent)">04</span><span style="font-size: 17px; line-height: 1.45"><strong>Students want transparency.</strong> Past syllabi, grading breakdowns, workload and teaching style, so expectations match reality.</span></li>
+</ol>
+</div>
+<figure class="reveal" style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="assets/pr-persona.jpg" alt="Primary persona board for Atena: goals and needs, motivations, frustrations and opportunities." style="display: block; width: 100%; border-radius: 16px; border: 2px solid #2E2119; box-sizing: border-box">
+<figcaption class="lbl" style="color: #6B5644">Primary persona — Atena, a student planning her next semester</figcaption>
+</figure>
+</div>
+
+<div class="reveal" style="background: #2E2119; color: #F4EADB; border-radius: 20px; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px">
+<h3 class="disp" style="margin: 0; font-size: clamp(2rem, 3.6vw, 3rem); color: #E0A84A">Atena’s registration week</h3>
+<span class="lbl" style="color: #F0B47E">Current-state journey map</span>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 12px">
+<li style="border-top: 3px solid #E0A84A; padding-top: 10px; display: flex; flex-direction: column; gap: 4px"><span class="lbl" style="color: #F0B47E">1 · Registration nears</span><span style="font-size: 15px; line-height: 1.4">Mild stress, uncertainty</span></li>
+<li style="border-top: 3px solid #E0A84A; padding-top: 10px; display: flex; flex-direction: column; gap: 4px"><span class="lbl" style="color: #F0B47E">2 · Frantic search</span><span style="font-size: 15px; line-height: 1.4">Confused, overwhelmed</span></li>
+<li style="border-top: 3px solid #F0B47E; padding-top: 10px; display: flex; flex-direction: column; gap: 4px"><span class="lbl" style="color: #F0B47E">3 · Picking a minor</span><span style="font-size: 15px; line-height: 1.4">Pressured, irritated</span></li>
+<li style="border-top: 3px solid #F0B47E; padding-top: 10px; display: flex; flex-direction: column; gap: 4px"><span class="lbl" style="color: #F0B47E">4 · Judging workload</span><span style="font-size: 15px; line-height: 1.4">Anxious, frustrated</span></li>
+<li style="border-top: 3px solid #E07B5A; padding-top: 10px; display: flex; flex-direction: column; gap: 4px"><span class="lbl" style="color: #F0B47E">5 · Seats &amp; timing</span><span style="font-size: 15px; line-height: 1.4">Worried about missing out</span></li>
+<li style="border-top: 3px solid #E07B5A; padding-top: 10px; display: flex; flex-direction: column; gap: 4px"><span class="lbl" style="color: #F0B47E">6 · Registers anyway</span><span style="font-size: 15px; line-height: 1.4">Resigned: <span class="ital" style="font-size: 1.1em">“Let’s just hope this works out.”</span></span></li>
+</ol>
+</div>
+</section>
+
+<!-- 03 SOLUTION -->
+<section id="solution" aria-labelledby="solution-h" style="background: var(--accent); color: #F4EADB; border-radius: clamp(24px, 4vw, 48px)">
+<div style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
+<div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(24px, 4vw, 64px); align-items: end">
+<div>
+<p class="lbl" style="margin: 0 0 14px; color: #F6CF8A">03 — The solution</p>
+<h2 id="solution-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">One <span class="ital" style="color: #F6CF8A">academic hub</span></h2>
+</div>
+<p style="margin: 0; font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.55">A single home screen routes to five services, replacing the SIS + WhatsApp + Excel + Google Drive patchwork. Each one maps straight to a research theme, so students can decide early and on evidence rather than reputation.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px">
+<div class="tile reveal" style="background: #F4EADB; color: #2E2119; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span class="disp" style="font-size: 44px; color: var(--accent)">01</span><h3 class="lbl" style="margin: 0; font-size: 15px">Professor &amp; course reviews</h3><p style="margin: 0; font-size: 16px; line-height: 1.55">Professor profiles with background, courses taught and star ratings, plus anonymous reviews of teaching style, difficulty and workload.</p></div>
+<div class="tile reveal" style="background: #F4EADB; color: #2E2119; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span class="disp" style="font-size: 44px; color: var(--accent)">02</span><h3 class="lbl" style="margin: 0; font-size: 15px">Syllabus library</h3><p style="margin: 0; font-size: 16px; line-height: 1.55">Student-uploaded syllabi, versioned by semester and professor, available before registration opens.</p></div>
+<div class="tile reveal" style="background: #F4EADB; color: #2E2119; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span class="disp" style="font-size: 44px; color: var(--accent)">03</span><h3 class="lbl" style="margin: 0; font-size: 15px">Course comparison</h3><p style="margin: 0; font-size: 16px; line-height: 1.55">Up to three courses side by side by professor, credits, difficulty and average grade, which no RIT platform offered.</p></div>
+<div class="tile reveal" style="background: #F4EADB; color: #2E2119; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span class="disp" style="font-size: 44px; color: var(--accent)">04</span><h3 class="lbl" style="margin: 0; font-size: 15px">Immersions &amp; minors</h3><p style="margin: 0; font-size: 16px; line-height: 1.55">Filterable student experiences covering workload, course sequence and Dubai vs. New York availability.</p></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: clamp(14px, 2vw, 24px)">
+<figure class="tile reveal" style="margin: 0; display: flex; flex-direction: column; gap: 10px"><img class="phone" src="assets/pr-professor-reviews.jpg" alt="Professor Reviews screen: searchable list of professors with ratings and course tags."><figcaption class="lbl" style="color: #F6CF8A">Professor reviews</figcaption></figure>
+<figure class="tile reveal" style="margin: 0; display: flex; flex-direction: column; gap: 10px"><img class="phone" src="assets/pr-course-reviews.jpg" alt="Course Reviews screen: courses with credits, rating and difficulty badges."><figcaption class="lbl" style="color: #F6CF8A">Course reviews</figcaption></figure>
+<figure class="tile reveal" style="margin: 0; display: flex; flex-direction: column; gap: 10px"><img class="phone" src="assets/pr-immersions.jpg" alt="Immersions and Minors screen: filter chips and student experience cards."><figcaption class="lbl" style="color: #F6CF8A">Immersions &amp; minors</figcaption></figure>
+<figure class="tile reveal" style="margin: 0; display: flex; flex-direction: column; gap: 10px"><img class="phone" src="assets/pr-syllabus.jpg" alt="Syllabus Library screen: syllabi listed by course, professor and semester with View buttons."><figcaption class="lbl" style="color: #F6CF8A">Syllabus library</figcaption></figure>
+<figure class="tile reveal" style="margin: 0; display: flex; flex-direction: column; gap: 10px"><img class="phone" src="assets/pr-compare.jpg" alt="Course Comparison screen: three Add Course slots."><figcaption class="lbl" style="color: #F6CF8A">Course comparison</figcaption></figure>
+</div>
+</div>
+</section>
+
+<!-- 04 DESIGN -->
+<section id="technology" aria-labelledby="tech-h" style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
+<div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; border-bottom: 6px solid #2E2119; padding-bottom: 14px">
+<div>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">04 — Design &amp; prototype</p>
+<h2 id="tech-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">Sketch to <span class="ital" style="color: var(--accent)">screen</span></h2>
+</div>
+<ul class="lbl" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="background: #2E2119; color: #F4EADB; border-radius: 999px; padding: 8px 14px">Figma</li>
+<li style="background: #2E2119; color: #F4EADB; border-radius: 999px; padding: 8px 14px">Hi-fi prototype</li>
+<li style="background: #2E2119; color: #F4EADB; border-radius: 999px; padding: 8px 14px">Bottom-tab nav</li>
+<li style="background: #2E2119; color: #F4EADB; border-radius: 999px; padding: 8px 14px">Card + rating UI</li>
+</ul>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(24px, 3vw, 48px)">
+<div class="reveal"><h3 class="lbl" style="margin: 0 0 10px; color: #8A3A20">Benchmark · RateMyProfessors</h3><p style="margin: 0; font-size: 17px; line-height: 1.65">We borrowed its scannable cards and star ratings but went further. It has no course-level insight or syllabi, its reviews are unverified, and its UI feels cluttered. We added professor background, courses taught and structured difficulty and workload indicators.</p></div>
+<div class="reveal"><h3 class="lbl" style="margin: 0 0 10px; color: #8A3A20">Benchmark · Airbnb</h3><p style="margin: 0; font-size: 17px; line-height: 1.65">Cross-industry inspiration for modular home tiles, rounded cards and consistent icons. Large tiles make categories easy to find and calm decision anxiety, while consistent spacing, shadows and corners keep things comfortable.</p></div>
+<div class="reveal"><h3 class="lbl" style="margin: 0 0 10px; color: #8A3A20">Visual hierarchy</h3><p style="margin: 0; font-size: 17px; line-height: 1.65">Clean sans-serif type that scans well on mobile, large text for key areas, and light neutral backgrounds. Coloured chips and badges allow quick comparison, and high-contrast ratings stay visible. A persistent bottom nav links every page.</p></div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px">
+<figure class="reveal" style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="assets/pr-sketches.jpg" alt="Hand-drawn low-fidelity ideation sketches of the app screens." style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; border: 2px solid #2E2119; box-sizing: border-box; background: #fff">
+<figcaption class="lbl" style="color: #6B5644">Fig. 1 — Low-fidelity ideation sketches</figcaption>
+</figure>
+<figure class="reveal" style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="assets/pr-prototype-flow.jpg" alt="Figma prototype canvas showing all screens and the connections between them." style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; border: 2px solid #2E2119; box-sizing: border-box; background: #1E1E1E">
+<figcaption class="lbl" style="color: #6B5644">Fig. 2 — Prototype wiring in Figma</figcaption>
+</figure>
+</div>
+
+<div class="reveal" style="background: #2E2119; color: #F4EADB; border-radius: 20px; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px">
+<h3 class="disp" style="margin: 0; font-size: clamp(2.2rem, 4vw, 3.4rem); color: #E0A84A">Challenges found in testing</h3>
+<span class="lbl" style="color: #F0B47E">Severity 1 (cosmetic) – 3 (major)</span>
+</div>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px 32px">
+<li style="display: flex; gap: 14px; align-items: baseline; border-top: 1px solid #5A4537; padding-top: 12px; font-size: 16px; line-height: 1.55"><span class="disp" style="font-size: 28px; color: #E0A84A">3</span><span><strong>Upload syllabus</strong> was only a small icon, so a user couldn’t find it. Fix: a prominent, labelled button.</span></li>
+<li style="display: flex; gap: 14px; align-items: baseline; border-top: 1px solid #5A4537; padding-top: 12px; font-size: 16px; line-height: 1.55"><span class="disp" style="font-size: 28px; color: #E0A84A">3</span><span><strong>Write a review</strong> opened a full page, but users expected a pop-up. Fix: a titled bottom-sheet modal.</span></li>
+<li style="display: flex; gap: 14px; align-items: baseline; border-top: 1px solid #5A4537; padding-top: 12px; font-size: 16px; line-height: 1.55"><span class="disp" style="font-size: 28px; color: #F0B47E">2</span><span><strong>Bottom nav</strong> blended into the background, so two participants tapped home tiles instead. Fix: higher contrast and labelled active state.</span></li>
+<li style="display: flex; gap: 14px; align-items: baseline; border-top: 1px solid #5A4537; padding-top: 12px; font-size: 16px; line-height: 1.55"><span class="disp" style="font-size: 28px; color: #F0B47E">2</span><span><strong>Compare “+” slots</strong> didn’t read as tappable. Fix: “Tap to select a course” microcopy and an animated +.</span></li>
+<li style="display: flex; gap: 14px; align-items: baseline; border-top: 1px solid #5A4537; padding-top: 12px; font-size: 16px; line-height: 1.55"><span class="disp" style="font-size: 28px; color: #F4EADB">1</span><span><strong>Course tags</strong> on professor cards looked like buttons. Fix: restyle them as non-interactive or make them work.</span></li>
+</ul>
+</div>
+</section>
+
+<!-- 05 OUTCOME -->
+<section id="outcome" aria-labelledby="outcome-h" style="background: #EADBC4">
+<div style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px)">
+<div class="reveal">
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">05 — Outcome</p>
+<h2 id="outcome-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">How it <span class="ital" style="color: var(--accent)">landed</span></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0; border-top: 2px solid #2E2119">
+<div class="reveal" style="padding: 24px 24px 24px 0; border-bottom: 2px solid #2E2119"><span class="disp" style="font-size: clamp(3.5rem, 7vw, 6rem); color: var(--accent)">100%</span><p style="margin: 8px 0 0; font-size: 16px">Task completion across all 5 usability tasks</p></div>
+<div class="reveal" style="padding: 24px 24px 24px 0; border-bottom: 2px solid #2E2119"><span class="disp" style="font-size: clamp(3.5rem, 7vw, 6rem); color: var(--accent)">4.7<span style="font-size: .45em">/5</span></span><p style="margin: 8px 0 0; font-size: 16px">Average ease-of-use rating</p></div>
+<div class="reveal" style="padding: 24px 24px 24px 0; border-bottom: 2px solid #2E2119"><span class="disp" style="font-size: clamp(3.5rem, 7vw, 6rem); color: var(--accent)">1</span><p style="margin: 8px 0 0; font-size: 16px">Error across 20 task attempts (4 participants × 5 tasks)</p></div>
+<div class="reveal" style="padding: 24px 24px 24px 0; border-bottom: 2px solid #2E2119"><span class="disp" style="font-size: clamp(3.5rem, 7vw, 6rem); color: var(--accent)">3–20<span style="font-size: .45em">s</span></span><p style="margin: 8px 0 0; font-size: 16px">Time on task, from finding a page to posting a review</p></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(24px, 3vw, 48px)">
+<div class="reveal"><h3 class="lbl" style="margin: 0 0 10px; color: #8A3A20">Final result</h3><p style="margin: 0; font-size: 17px; line-height: 1.65">A unified, high-fidelity Figma prototype: a home hub, professor and course reviews, immersions and minors, a syllabus library and course comparison. After testing and heuristic review we improved visibility and hierarchy, made card and colour styles consistent, strengthened feedback and reduced cognitive load.</p></div>
+<div class="reveal"><h3 class="lbl" style="margin: 0 0 10px; color: #8A3A20">What I learned</h3><p style="margin: 0; font-size: 17px; line-height: 1.65">User research surfaces needs designers overlook, and iterative testing is essential. Simple UI patterns beat complex ones, and Nielsen’s heuristics and WCAG are powerful tools for testing a design. I also got better at turning qualitative pain points into concrete design requirements.</p></div>
+<div class="reveal"><h3 class="lbl" style="margin: 0 0 10px; color: #8A3A20">Future improvements</h3><p style="margin: 0; font-size: 17px; line-height: 1.65">Fix accessibility gaps from our WCAG audit: raise contrast where white text sits on pink (1.4.3), enlarge touch targets to 44×44 px (2.5.5) and label the star-rating input (3.3.2). Also separate syllabus entries from reviews with clearer icons and “View syllabus” labels.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 06 EXPLORE -->
+
+
+<!-- PREV / NEXT -->
+<section id="explore" aria-labelledby="explore-h" style="max-width: 1440px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(16px, 4vw, 56px); display: flex; flex-direction: column; gap: 32px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div>
+<p class="lbl" style="margin: 0 0 14px; color: var(--accent)">06 — Explore the project</p>
+<h2 id="explore-h" class="disp" style="margin: 0; font-size: clamp(3rem, 6vw, 5.5rem)">Try it <span class="ital" style="color: var(--accent)">yourself</span></h2>
+</div>
+<a href="https://www.figma.com/design/pbgQNNUA4xSpjly1WGovsp/ISTE260_FINAL_PROTOTYPE?m=auto&amp;t=7S8sI244bThS6MG3-6" class="btn lbl" style="background: #2E2119; color: #F4EADB; text-decoration: none; font-size: 15px; padding: 16px 26px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px">Open Figma prototype <span class="arrow">↗</span></a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 56px); align-items: center; justify-content: center">
+<div class="reveal" style="flex: 0 1 280px; max-width: 280px"><img class="phone float" src="assets/pr-home.jpg" alt="Home screen: welcome banner, five service tiles, top-rated professors and community stats." style="aspect-ratio: 9 / 19.5"></div>
+<div class="reveal" style="display: flex; flex-direction: column; gap: 16px; flex: 999 1 420px; min-width: 0">
+<p style="margin: 0; font-size: 17px; line-height: 1.6">Press Play in Figma to run the prototype. These are the flows we tested:</p>
+<ol style="margin: 0; padding: 0; list-style: none; border-top: 2px solid #2E2119">
+<li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid #CDB89C; font-size: 17px; line-height: 1.45"><span class="disp" style="font-size: 32px; color: var(--accent)">1</span>Find Dr. Khalil, read his profile, then write and post a review.</li>
+<li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid #CDB89C; font-size: 17px; line-height: 1.45"><span class="disp" style="font-size: 32px; color: var(--accent)">2</span>Compare two courses side by side.</li>
+<li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid #CDB89C; font-size: 17px; line-height: 1.45"><span class="disp" style="font-size: 32px; color: var(--accent)">3</span>Open the CS201 syllabus from the library.</li>
+</ol>
+</div>
+</div>
+</section><nav aria-label="More projects" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px) clamp(56px, 7vw, 96px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px">
+<a href="virufy.html" class="nx" style="text-decoration: none; color: #2E2119; border: 2px solid #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px"><span class="lbl"><span class="arrow back">←</span> Previous case · 01</span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">Virufy</span></a>
+<a href="index.html" class="nx" style="text-decoration: none; color: #F4EADB; background: #2E2119; border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px; text-align: right"><span class="lbl" style="color: #F0B47E">That’s the issue <span class="arrow">→</span></span><span class="disp" style="font-size: clamp(2rem, 4vw, 3.2rem)">Back to all work</span></a>
+</nav>
+
+<!-- CONTACT -->
+<footer id="contact" style="background: #2E2119; color: #F4EADB">
+<div style="max-width: 1440px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<span class="disp" style="font-size: 36px">Let’s <span class="ital" style="color: #E0A84A">connect.</span></span>
+<div class="lbl" style="display: flex; flex-wrap: wrap; gap: 4px 24px">
+<a href="mailto:vyshnavramesh2005@gmail.com" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">Email</a>
+<a href="https://www.linkedin.com/in/vyshnav-ramesh-747388252/" target="_blank" rel="noopener" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">LinkedIn</a>
+<a href="https://github.com/Vyshnav-Ramesh" target="_blank" rel="noopener" class="ul" style="color: #F4EADB; text-decoration: none; padding: 12px 0">GitHub</a>
+<a id="resume" href="assets/CV_Vyshnav_Ramesh.pdf" target="_blank" rel="noopener" class="ul" style="color: #E0A84A; text-decoration: none; padding: 12px 0">Resume (PDF) ↓</a>
+</div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
